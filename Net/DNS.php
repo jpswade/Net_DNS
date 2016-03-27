@@ -296,7 +296,7 @@ class Net_DNS
      * @return  integer The integer value of an RR type
      * @see     Net_DNS::typesbyval()
      */
-    function typesbyname($rrtype)
+    static function typesbyname($rrtype)
     {
         $rc = array(
                 'A'             => 1,
@@ -363,7 +363,7 @@ class Net_DNS
      * @return  string  The name of the RR type
      * @see     Net_DNS::typesbyname()
      */
-    function typesbyval($rrtypeval)
+    static function typesbyval($rrtypeval)
     {
         $rc = array(
                 1 => 'A',
@@ -437,7 +437,7 @@ class Net_DNS
      * @return  integer The integer value of an class type
      * @see     Net_DNS::classesbyval()
      */
-    function classesbyname($class)
+    static function classesbyname($class)
     {
         $rc = array(
                 'IN'   => 1,   // RFC 1035
@@ -463,7 +463,7 @@ class Net_DNS
      * @return  string  The name of the RR class
      * @see     Net_DNS::classesbyname()
      */
-    function classesbyval($classval)
+    static function classesbyval($classval)
     {
         $rc = array(
                 1 => 'IN',

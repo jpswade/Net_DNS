@@ -74,7 +74,7 @@ class Net_DNS_RR
      * @access public
      * @see Net_DNS_RR::new_from_array Net_DNS_RR::new_from_data Net_DNS_RR::new_from_string
      */
-    function &factory($rrdata, $update_type = '')
+    static function &factory($rrdata, $update_type = '')
     {
         if (is_string($rrdata)) {
             $rr = &Net_DNS_RR::new_from_string($rrdata, $update_type);
@@ -89,7 +89,7 @@ class Net_DNS_RR
 
     /* }}} */
     /* Net_DNS_RR::new_from_data($name, $ttl, $rrtype, $rrclass, $rdlength, $data, $offset) {{{ */
-    function &new_from_data($name, $rrtype, $rrclass, $ttl, $rdlength, $data, $offset)
+    static function &new_from_data($name, $rrtype, $rrclass, $ttl, $rdlength, $data, $offset)
     {
         $rr = new Net_DNS_RR('getRR');
         $rr->name = $name;
