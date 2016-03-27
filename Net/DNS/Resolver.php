@@ -1343,7 +1343,7 @@ class Net_DNS_Resolver
             if (strlen($buf) != $len) {
                 $this->errorstring = 'expected ' . $len . ' bytes, received ' . strlen($buf);
                 if ($this->debug) {
-                    echo ';; ' . $err . "\n";
+                    echo ';; ' . $this->errorstring . "\n";
                 }
                 return null;
             }
