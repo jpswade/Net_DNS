@@ -811,8 +811,8 @@ class Net_DNS_Resolver
             $e = socket_get_status($sock);
             /* If $buf is empty, we want to supress errors
                long enough to reach the continue; down the line */
-            $len = @unpack('nint', $buf);
-            $len = @$len['int'];
+            $len = unpack('nint', $buf);
+            $len = $len['int'];
             if (!$len) {
                 continue;
             }
@@ -841,6 +841,7 @@ class Net_DNS_Resolver
             $this->errorstring = $ans->header->rcode;
             $ans->answerfrom = $this->answerfrom;
             $ans->answersize = $this->answersize;
+
             return $ans;
         }
     }
