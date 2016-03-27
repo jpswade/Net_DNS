@@ -809,10 +809,13 @@ class Net_DNS_Resolver
             socket_set_timeout($sock, $timeout);
             $buf = fread($sock, 2);
             $e = socket_get_status($sock);
-            /* If $buf is empty, we want to supress errors
+            /* If $buf is empty, we want to suppress errors
                long enough to reach the continue; down the line */
-            $len = unpack('nint', $buf);
-            $len = $len['int'];
+            $len = null;
+            if ($buf) {
+                $len = @unpack('nint', $buf);
+                $len = isset($len['int']) ? $len['int'] : null;
+            }
             if (!$len) {
                 continue;
             }

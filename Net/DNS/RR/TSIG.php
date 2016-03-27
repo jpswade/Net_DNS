@@ -148,8 +148,8 @@ class Net_DNS_RR_TSIG extends Net_DNS_RR
     }
 
     /* }}} */
-    /* Net_DNS_RR_TSIG::rr_rdata($packet, $offset) {{{ */
-    function rr_rdata($packet, $offset)
+    /* Net_DNS_RR_TSIG::rr_rdata(&$packet, $offset) {{{ */
+    function rr_rdata(&$packet, $offset)
     {
         $rdata = '';
         $sigdata = '';

@@ -70,8 +70,8 @@ class Net_DNS_RR_AAAA extends Net_DNS_RR
         return '; no data';
     }
     /* }}} */
-    /* Net_DNS_RR_AAAA::rr_rdata($packet, $offset) {{{ */
-    function rr_rdata($packet, $offset)
+    /* Net_DNS_RR_AAAA::rr_rdata(&$packet, $offset) {{{ */
+    function rr_rdata(&$packet, $offset)
     {
         return Net_DNS_RR_AAAA::ipv6_compress($this->address);
     }

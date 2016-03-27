@@ -83,8 +83,8 @@ class Net_DNS_RR_HINFO extends Net_DNS_RR
     }
 
     /* }}} */
-    /* Net_DNS_RR_HINFO::rr_rdata($packet, $offset) {{{ */
-    function rr_rdata($packet, $offset)
+    /* Net_DNS_RR_HINFO::rr_rdata(&$packet, $offset) {{{ */
+    function rr_rdata(&$packet, $offset)
     {
         if ($this->text) {
             $rdata  = pack('C', strlen($this->cpu)) . $this->cpu;
