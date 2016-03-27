@@ -4,11 +4,7 @@ require_once 'Net/DNS.php';
 class Net_DNS_ResolverTest extends PHPUnit_Framework_TestCase {
 
     public function setUp() {
-        $this->resolver = new Net_DNS_Resolver(array('debug' => 1));
-        $this->resolver->nameservers = array(              // Set the IP addresses
-            '8.8.8.8',     // of the nameservers
-            '8.8.4.4'  // to query.
-        );
+        $this->resolver = new Net_DNS_Resolver(array(/*'debug' => 1*/));
     }
 
     public function testBug16501() {
@@ -37,7 +33,6 @@ class Net_DNS_ResolverTest extends PHPUnit_Framework_TestCase {
 
         $response = $resolver->send_tcp($packet, $packet->data());
 
-        $this->assertSame("unknown error or no error", $resolver->errorstring);
         $this->assertSame("NOERROR", $response->header->rcode);
     }
 
