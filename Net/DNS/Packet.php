@@ -470,7 +470,7 @@ class Net_DNS_Packet
      *                  and $offset is the offset of the next field in the
      *                  packet.  Returns array(null, null) on error
      */
-    function label_extract($packet, $offset)
+    static function label_extract($packet, $offset)
     {
         $packetlen = strlen($packet);
         $name = '';
